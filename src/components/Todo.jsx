@@ -1,8 +1,9 @@
 import React from 'react'
-
-function Todo() {
+function Todo(todo) {
   return (
-    <div>Todo</div>
+    <div>
+        <li key={todo.title}>{todo}</li>
+    </div>
   )
 }
 

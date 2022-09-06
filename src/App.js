@@ -8,20 +8,21 @@ import './App.css';
 function App() {
 
   const [advice, setAdvice] = useState("");
-  const [error, seterror] = useState();
 
   useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos/')
-        .then(response => response.json())
-        .then(res => setAdvice(res.slice(0,10)))
-        .catch(err => seterror(err))
+        axios.get("https://jsonplaceholder.typicode.com/todos/")
+        .then(res => {
+            console.log(res)
+            setAdvice(res.data)
+        })
+        .catch(err => {console.log(err)})
   }, []);
   return (
     
       <div className='App'>
-        {advice.length > 0 ? advice.map((todo) => {
-          return <Todo />;
-        }) : ('Loading...')}
+        <ul>
+            {advice.map(ad => (<li key={ad.id}>{ad.title}</li>))}
+        </ul>
       </div>
   );
 };
