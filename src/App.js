@@ -7,22 +7,20 @@ import './App.css';
 
 function App() {
 
-  const [advice, setAdvice] = useState("");
+  const [advices, setAdvice] = useState("");
 
-  useEffect(() => {
-        axios.get("https://jsonplaceholder.typicode.com/todos/")
-        .then(res => {
-            console.log(res)
-            setAdvice(res.data)
-        })
-        .catch(err => {console.log(err)})
-  }, []);
+//   useEffect(() => {
+//         axios.get("https://jsonplaceholder.typicode.com/todos/")
+//         .then(res => {
+//             console.log(res)
+//             setAdvice(res.data)
+//         })
+//         .catch(err => {console.log(err)})
+//   }, [1]);
   return (
     
       <div className='App'>
-        <ul>
-            {advice.map(ad => (<li key={ad.id}>{ad.title}</li>))}
-        </ul>
+            <Todo />
       </div>
   );
 };
