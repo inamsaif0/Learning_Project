@@ -2,8 +2,10 @@ import logo from './logo.svg';
 import axios from 'axios'
 import { useState, useEffect } from 'react';
 import Todo from './components/Todo';
+import PostData from './components/Post';
 import './App.css';
-
+import View from './components/View';
+import Switcher from './components/Switcher';
 
 function App() {
 
@@ -20,7 +22,7 @@ function App() {
   return (
     
       <div className='App'>
-            <Todo />
+            <Switcher />
       </div>
   );
 };
