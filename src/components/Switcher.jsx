@@ -13,8 +13,6 @@ function Switcher() {
             <Routes>
                 <Route path='/' element={<Viewpage/>}>
                     <Route path="/route/Editpage" element={<Edit />} />
-               
-                    
                 </Route>
             </Routes>
         </Router>
