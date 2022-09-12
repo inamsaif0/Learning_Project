@@ -6,7 +6,7 @@ import {useQuery} from 'react-query';
 import "./Viewpage.css"
 const columns = [
     {
-        title: 'Name',
+        title: 'Id',
         dataIndex: 'name',
         filters: [
             {
@@ -28,12 +28,12 @@ const columns = [
         width: '30%',
     },
     {
-        title: 'Age',
+        title: 'Title',
         dataIndex: 'age',
         sorter: (a, b) => a.age - b.age,
     },
     {
-        title: 'Address',
+        title: 'Status',
         dataIndex: 'address',
         filters: [
             {
@@ -98,7 +98,7 @@ if(isError){
 return(
     <div className="card">
         <Card title="View Detail" bordered={false} style={{ width: 1000 }} className="card_detail">
-        <Table key={data[1].id} columns={columns} dataSource={data} onChange={onChange} />;
+        <Table  columns={columns} dataSource={data} onChange={onChange} />;
         </Card>
     </div>
     );
